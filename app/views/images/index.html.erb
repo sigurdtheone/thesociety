@@ -1,0 +1,11 @@
+<div class="row" data-equalizer data-equalize-on="medium">
+  <% @images.each do |image| -%>
+    <div class="small-2 columns">
+      <div class="" data-equalizer-watch>
+        <a href="<%= "images/#{@folder}/original/#{image}" %>">
+          <img class="thumbnail" src="<%= "images/#{@folder}/thumbs/tmb_#{image}" %>" height="100">
+        </a>
+      </div>
+    </div>
+  <% end -%>
+</div>
