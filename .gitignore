@@ -21,4 +21,5 @@ config/env.yml
 .env
 
 # Public Dirs
-public/
+public/images
+public/files
