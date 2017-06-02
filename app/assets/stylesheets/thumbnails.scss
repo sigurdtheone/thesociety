@@ -1,18 +1,15 @@
-/*
- *= require_tree .
- *= require foundation_and_overrides
- *= require_self
- */
+@import "components/thumbnail";
 
-$include-html-media-classes: $include-html-classes;
+.custom-thumbnail {
+  @include thumbnail(
+    $thumb-border-style: solid,
+    $thumb-border-width: 4px,
+    $thumb-border-color: rgba(#454955),
+    $thumb-box-shadow: 0 0 0 1px rgba(#590000),
+    $thumb-box-shadow-hover: 0 0 6px 1px rgba(#8B0000,0.5),
 
-// We use these to control border styles
-$thumb-border-style: solid;
-$thumb-border-width: 4px;
-$thumb-border-color: rgba(#454955);
-$thumb-box-shadow: 0 0 0 1px rgba(#590000);
-$thumb-box-shadow-hover: 0 0 6px 1px rgba(#8B0000,0.5);
-
-// Radius and transition speed for thumbs
-$thumb-radius: $global-radius;
-$thumb-transition-speed: 200ms;
+    // Radius and transition speed for thumbs
+    $thumb-radius: $global-radius,
+    $thumb-transition-speed: 200ms
+  );
+}
