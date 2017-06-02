@@ -14,11 +14,11 @@
 !/tmp/.keep
 
 # Ignore Byebug command history file.
-.byebug_history
+/.byebug_history
 
 # Ignore application configuration
-config/env.yml
-.env
+/config/env.yml
+/.env
 
 # Public Dirs
-public/
+/public/images

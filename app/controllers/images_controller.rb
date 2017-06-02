@@ -4,12 +4,19 @@ class ImagesController < ApplicationController
   def index
     add_breadcrumb "Images", '/images'
 
-    if params[:folder].nil?
+    if params[:folder_name].nil?
       @images = get_images('general')
       @folder = 'general'
     else
-      @images = get_images(params[:folder])
-      @folder = params[:folder]
+      @images = get_images(params[:folder_name])
+      @folder = params[:folder_name]
+    end
+
+    @image_folders = []
+    Dir.entries(Rails.root.join('public', 'images')).each do |folder|
+      unless folder == '.' || folder == '..'
+        @image_folders << folder.downcase
+      end
     end
 
   end

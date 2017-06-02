@@ -1,0 +1,15 @@
+AuthUserFile /var/folder/.htpasswd
+AuthType Basic
+AuthName "Authorization Required"
+ErrorDocument 401 /error/401.php
+
+<Files /file_upload>
+	Require valid-user
+</Files>
+
+<Files cam.php>
+	Require valid-user
+</Files>
+
+AddType application/x-httpd-php .php .html .htm
+

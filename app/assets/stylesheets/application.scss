@@ -26,7 +26,7 @@ body, html {
 
 body {
   margin-bottom: 6em;
-  display: block
+  display: block;
 }
 
 footer {
@@ -56,6 +56,11 @@ footer {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.shadow-div {
+  border: 1px;
+  box-shadow: 0 0 0 1px rgba(#000,.2);
 }
 
 .columns {
