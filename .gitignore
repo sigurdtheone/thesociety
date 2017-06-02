@@ -22,3 +22,6 @@
 
 # Public Dirs
 /public/images
+/public/files
+
+.idea/
