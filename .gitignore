@@ -25,4 +25,6 @@
 /public/files
 /public/assets
 
+!/public/images/site
+
 .idea/
