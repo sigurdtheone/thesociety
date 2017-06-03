@@ -13,8 +13,20 @@
   @include button();
   @include button-style(
     $background: #454955,
-    $background-hover: scale-color(#EE0000, $lightness: -15%)
+    $background-hover: scale-color(#2E3038, $lightness: -15%)
   );
+  box-shadow: 0 0 0 1px rgba(#590000, 0.2);
 }
+
+/* Pre-render the bigger shadow, but hide it */
+.custom-button:hover {
+  box-shadow: 0 0 6px 3px rgba(#EE0000, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.custom-button:hover::after {
+  opacity: 1;
+}
+
 //$thumbnail-shadow: 0 0 0 1px rgba(#590000, 0.2);
 //$thumbnail-shadow-hover: 0 0 6px 3px rgba(#EE0000, 0.5);

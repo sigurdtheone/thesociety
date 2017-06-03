@@ -1,7 +1,8 @@
-@import 'foundation_and_overrides';
 /*
+@import 'foundation_and_overrides';
+
 .custom-top-bar {
-  @include top-bar-container(
+  @include foundation-top-bar(
     $topbar-padding: 0.5rem,
     $topbar-background: #454955,
     $topbar-submenu-background: #454955,
