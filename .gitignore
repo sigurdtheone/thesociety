@@ -23,6 +23,6 @@
 # Public Dirs
 /public/images
 /public/files
-#/public/assets
+/public/assets
 
 .idea/
