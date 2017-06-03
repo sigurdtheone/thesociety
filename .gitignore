@@ -25,6 +25,10 @@
 /public/files
 /public/assets
 
-!/public/images/site/*
+!/public/images/site/bg-wood.jpg
+!/public/images/site/black-stripe.gif
+!/public/images/site/original
+!/public/images/site/thumbs
+
 
 .idea/
