@@ -27,17 +27,49 @@
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-    <%= render 'shared/topbar' %>
   </head>
 
   <body>
+    <div class="row">
+      <div class="wrapper">
 
-    <div class="content">
-      <%= yield %>
+        <div class="row">
+          <div class="medium-18 column content-banner medium-centered">
+            <!--<img src="https://thesociety.dk/images/site/original/banner.png">-->
+            <div class="black-chancery-font">The Society</div>
+          </div>
+        </div>
+
+        <div class="row align-center">
+
+          <div class="medium-3 columns stacked custom-button-group content-menu">
+            <a class="custom-button" href="<%= ENV['SITE_URL'] %>">Main Site</a>
+            <a class="custom-button" href="<%= ENV['SITE_URL'] %>/file_upload">File Upload</a>
+            <a class="custom-button" href="<%= ENV['SITE_URL'] %>/images">Images</a>
+            <a class="custom-button" href="<%= ENV['SITE_URL'] %>/minecraft">Minecraft</a>
+            <a class="custom-button" href="https://wiki.thesociety.dk">Wiki</a>
+            <a class="custom-button" href="<%= ENV['SITE_URL'] %>/magic">Magic</a>
+            <a class="custom-button" href="https://subsonic.thesociety.dk">Subsonic</a>
+          </div>
+
+          <div class="medium-12 columns content-center">
+            <%= yield %>
+          </div>
+
+          <div class="medium-3 columns content-right-menu">
+            <img>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="medium-18 column">
+            <footer>
+              <%= render 'shared/footer' %>
+            </footer>
+          </div>
+        </div>
+      </div>
     </div>
-
   </body>
-  <footer>
-    <%= render 'shared/footer' %>
-  </footer>
 </html>
