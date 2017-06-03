@@ -1,0 +1,20 @@
+@import 'foundation_and_overrides';
+
+.custom-button-group {
+  @include button-group(
+    $child-selector: '.custom-button'
+  );
+  @include button-group-expand(
+    $selector: '.custom-button'
+  );
+}
+
+.custom-button {
+  @include button();
+  @include button-style(
+    $background: #454955,
+    $background-hover: scale-color(#EE0000, $lightness: -15%)
+  );
+}
+//$thumbnail-shadow: 0 0 0 1px rgba(#590000, 0.2);
+//$thumbnail-shadow-hover: 0 0 6px 3px rgba(#EE0000, 0.5);
