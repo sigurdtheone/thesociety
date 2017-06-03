@@ -1,10 +1,12 @@
 .wrapper {
+  width:1068px;
   -moz-border-radius: 20px;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   //background-color: #0a0908;
   //background-image: url('https://thesociety.dk/images/site/bg.jpg');
-  background-image: url(https://thesociety.dk/images/site/bg-wood.jpg);
+  //background-image: url(https://thesociety.dk/images/site/bg-wood.jpg);
+  background-image: url(https://thesociety.dk/images/site/black-stripe.gif);
   border: 1px solid #000000;
   box-shadow: 0 0 50px 5px darkred;
 }
@@ -19,7 +21,11 @@
   box-shadow: 0 0 5px 1px black;
 }
 .content-banner {
-  margin:5px;
+  //margin:5px;
+  margin-bottom:5px;
+  margin-top:5px;
+  margin-left:10px;
+  margin-right:10px;
   border:2px solid #000000;
   background-color: #25272D;
   -moz-border-radius: 5px;
@@ -29,8 +35,8 @@
 }
 
 .content-menu {
-  margin:5px;
-  border:2px solid #000000;
+  margin: 5px;
+  border: 2px solid #000000;
   background-color: #25272D;
   -moz-border-radius: 5px;
   border-radius: 5px;

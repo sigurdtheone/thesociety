@@ -1,0 +1,18 @@
+
+<table>
+  <thead>
+  <tr>
+    <th width="200">Table Header</th>
+    <th>Table Header</th>
+    <th width="150">Table Header</th>
+    <th width="150">Table Header</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <% @server_info.each do |info| -%>
+        <td><%= info %>Content Goes Here</td>
+    <% end -%>
+  </tr>
+  </tbody>
+</table>

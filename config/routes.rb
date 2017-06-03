@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   # Images
   get '/images', to: 'images#index'
   post '/images', to: 'images#index'
+
+  # Images
+  get '/minecraft', to: 'minecraft#index'
+  post '/minecraft', to: 'minecraft#index'
 end

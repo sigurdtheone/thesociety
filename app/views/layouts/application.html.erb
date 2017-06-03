@@ -30,19 +30,19 @@
   </head>
 
   <body>
-    <div class="row">
-      <div class="wrapper">
+    <div class="row medium-20">
+      <div class="wrapper medium-centered">
 
         <div class="row">
           <div class="medium-18 column content-banner medium-centered">
             <!--<img src="https://thesociety.dk/images/site/original/banner.png">-->
-            <div class="black-chancery-font">The Society</div>
+            <div class="black-chancery-font" style="text-align: center;">The Society</div>
           </div>
         </div>
 
         <div class="row align-center">
 
-          <div class="medium-3 columns stacked custom-button-group content-menu">
+          <div class="medium-3 columns stacked custom-button-group content-menu align-top">
             <a class="custom-button" href="<%= ENV['SITE_URL'] %>">Main Site</a>
             <a class="custom-button" href="<%= ENV['SITE_URL'] %>/file_upload">File Upload</a>
             <a class="custom-button" href="<%= ENV['SITE_URL'] %>/images">Images</a>
@@ -56,7 +56,7 @@
             <%= yield %>
           </div>
 
-          <div class="medium-3 columns content-right-menu">
+          <div class="medium-3 columns content-right-menu align-top">
             <img>
           </div>
 

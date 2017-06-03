@@ -16,28 +16,22 @@
  *= require buttons
  *= require containers
  */
-/*
+
 html {
   position: relative;
   min-height: 100%
 }
 
-body, html {
-  height: auto
-}
-*/
 body {
-  background-color: #0a0908;
-  //background-image: url(https://thesociety.dk/images/site/bg-wood.jpg);
+  padding-top: 20px;
+  display: block;
+  #background-color: #0a0908;
+  background-image: url(https://thesociety.dk/images/site/bg-wood.jpg);
 }
-/*
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 3em;
+
+body, html {
+  height:auto;
 }
-*/
 
 @font-face {
   font-family: "Black Chancery";
