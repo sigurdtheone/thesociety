@@ -9,7 +9,7 @@ class MinecraftController < ApplicationController
                             :name => 'The Society', # you can put any arbitrary string here
                             :port => 2501,
                             :timeout => 5 # seconds before we give up on the socket connection
-      ).to_yaml
+      )
     rescue Exception
     else
     end

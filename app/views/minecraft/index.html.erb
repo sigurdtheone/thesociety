@@ -2,14 +2,24 @@
 <table>
   <thead>
   <tr>
-    <% @server_info.keys.each do |column| -%>
-        <th><%= column %></th>
-    <% end -%>
+  	<th>Name</th>
+	<th>Version</th>
+	<th>Map</th>
+        <th>Players Online</th>
+        <th>Players</th>
   </tr>
   </thead>
   <tbody>
   <tr>
-        <td><%= @server_info %></td>
+ 	<td><%= @server_info.name %></td>
+      	<td><%= @server_info.version %></td>
+	<td><%= @server_info.map_name %></td>
+	<td><%= @server_info.num_players %> / <%= @server_info.max_players %></td>
+	<td>
+		<% @server_info.players.each do |player| %>
+	  		<%= player %>
+		<% end %>
+	</td>
   </tr>
   </tbody>
 </table>
