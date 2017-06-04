@@ -2,7 +2,7 @@
 <table>
   <thead>
   <tr>
-    <% @server_info.column_names.each do |column| -%>
+    <% @server_info.keys.each do |column| -%>
         <th><%= column %></th>
     <% end -%>
   </tr>
