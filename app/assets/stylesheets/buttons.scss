@@ -10,7 +10,7 @@
 }
 
 .custom-button {
-  @include button();
+  @include foundation-button();
   @include button-expand(
     $expand: true
   );
@@ -33,3 +33,4 @@
 .custom-button:hover::after {
   opacity: 1;
 }
+

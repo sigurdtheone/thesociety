@@ -1,25 +1,30 @@
-
-<table>
-  <thead>
-  <tr>
-  	<th>Name</th>
-	<th>Version</th>
-	<th>Map</th>
+<div class="row align-middle align-center">
+  <div class="medium-18 columns">
+    <table>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Version</th>
+        <th>Map</th>
         <th>Players Online</th>
         <th>Players</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
- 	<td><%= @server_info.name %></td>
-      	<td><%= @server_info.version %></td>
-	<td><%= @server_info.map_name %></td>
-	<td><%= @server_info.num_players %> / <%= @server_info.max_players %></td>
-	<td>
-		<% @server_info.players.each do |player| %>
-	  		<%= player %>
-		<% end %>
-	</td>
-  </tr>
-  </tbody>
-</table>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <% unless @server_info.nil? %>
+          <td><%= @server_info.name  || 'N/A' %></td>
+          <td><%= @server_info.version  || 'N/A' %></td>
+          <td><%= @server_info.map_name  || 'N/A' %></td>
+          <td><%= @server_info.num_players  || 'N/A' %> / <%= @server_info.max_players  || 'N/A'  %></td>
+          <td>
+            <% @server_info.players.each do |player| %>
+                <%= player %>
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
