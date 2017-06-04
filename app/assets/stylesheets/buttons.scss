@@ -10,7 +10,7 @@
 }
 
 .custom-button {
-  @include foundation-button();
+  @include button();
   @include button-expand(
     $expand: true
   );
