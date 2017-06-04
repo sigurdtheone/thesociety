@@ -2,17 +2,14 @@
 <table>
   <thead>
   <tr>
-    <th width="200">Table Header</th>
-    <th>Table Header</th>
-    <th width="150">Table Header</th>
-    <th width="150">Table Header</th>
+    <% @server_info.column_names.each do |column| -%>
+        <th><%= column %></th>
+    <% end -%>
   </tr>
   </thead>
   <tbody>
   <tr>
-
         <td><%= @server_info %></td>
-
   </tr>
   </tbody>
 </table>

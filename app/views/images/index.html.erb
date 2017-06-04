@@ -1,27 +1,23 @@
 
-<div class="row" data-equalizer data-equalize-on="medium">
-  <div class="large-12 columns" style="border: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,.2);">
-    <%= form_tag '/images', multipart: true do %>
-      <fieldset class="small-4 columns">
-        <label>Image Folder
-          <select id="folder_name" name="folder_name">
-            <% @image_folders.each do |folder| -%>
-                <option value="<%= folder %>"><%= folder.slice(0,1).capitalize + folder.slice(1..-1) %></option>
-            <% end -%>
-          </select>
-        </label>
-      </fieldset>
-      <fieldset class="small-4 columns">
-        <label> Go </label>
-        <input type="submit" value="Go" class="button" data-disable-with="Upload File">
-      </fieldset>
-    <% end %>
-  </div>
+<div class="row align-justify">
+  <%= form_tag '/images', multipart: true do %>
+    <div class="medium-2 columns">
+        <select id="folder_name" name="folder_name">
+          <% @image_folders.each do |folder| -%>
+              <option value="<%= folder %>"><%= folder.slice(0,1).capitalize + folder.slice(1..-1) %></option>
+          <% end -%>
+        </select>
+    </div>
+    <div class="medium-2 columns">
+      <!--<label> Go </label>-->
+      <input type="submit" value="Go" class="button">
+    </div>
+  <% end %>
 </div>
 
 <div class="row" data-equalizer data-equalize-on="medium">
   <% @images.each do |image| -%>
-    <div class="small-4 columns">
+    <div class="medium-4 columns">
       <div class="" data-equalizer-watch>
         <a href="<%= "images/#{@folder}/original/#{image}" %>">
           <img class="thumbnail" src="<%= "images/#{@folder}/thumbs/tmb_#{image}" %>" height="100">

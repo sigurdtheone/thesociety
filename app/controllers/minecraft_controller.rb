@@ -4,11 +4,15 @@ class MinecraftController < ApplicationController
   def index
     add_breadcrumb "Minecraft", '/minecraft'
 
-    @server_info = Glowstone::Server.new("127.0.0.1",
-                          :name => 'The Society', # you can put any arbitrary string here
-                          :port => 2501,
-                          :timeout => 5 # seconds before we give up on the socket connection
-    ).to_yaml
+    begin
+      @server_info = Glowstone::Server.new("127.0.0.1",
+                            :name => 'The Society', # you can put any arbitrary string here
+                            :port => 2501,
+                            :timeout => 5 # seconds before we give up on the socket connection
+      ).to_yaml
+    rescue Exception
+    else
+    end
 
   end
 end
