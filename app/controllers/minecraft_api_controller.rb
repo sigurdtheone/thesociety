@@ -1,6 +1,11 @@
 class MinecraftApiController < ActionController::API
+
+  def return_error(res)
+    puts  "Something went wrong, API returned error: #{res.code} - #{res.body}"
+  end
+
   def show
-    begin
+    #begin
 
       @server_info = Glowstone::Server.new('gm.cph.nodescloud.com',
                             :name => 'Nodes', # you can put any arbitrary string here
@@ -35,8 +40,8 @@ class MinecraftApiController < ActionController::API
         return_error(res)
       end
       
-    rescue Exception
-    else
-    end
+    #rescue Exception
+    #else
+    #end
   end
 end
