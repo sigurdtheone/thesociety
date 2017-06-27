@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   get '/images', to: 'images#index'
   post '/images', to: 'images#index'
 
-  # Images
+  # Minecraft
   get '/minecraft', to: 'minecraft#index'
   post '/minecraft', to: 'minecraft#index'
+  
+  # Minecraft
+  get '/api_minecraft', to: 'minecraft#show'
+  post '/api_minecraft', to: 'minecraft#show'
 end
