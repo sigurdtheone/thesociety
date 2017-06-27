@@ -14,7 +14,7 @@ class MinecraftApiController < ActionController::API
 
       payload ={
           'channel' => 'testest',
-          'user_name' => "#{params[:user_name]}",
+          #'user_name' => "#{params[:user_name]}",
           'attachments' => [
               'color' => 'good',
               'title' => "#{@server_info.name} - #{@server_info.motd}",
