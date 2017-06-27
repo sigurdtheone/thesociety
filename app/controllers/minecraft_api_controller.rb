@@ -1,13 +1,14 @@
 class MinecraftApiController < ActionController::API
-  def index
-    add_breadcrumb "Minecraft", '/minecraft'
-
+  def show
     begin
-      @server_info = Glowstone::Server.new("127.0.0.1",
-                            :name => 'The Society', # you can put any arbitrary string here
+      @server_info = Glowstone::Server.new("gm.cph.nodescloud.com",
+                            :name => 'Nodes', # you can put any arbitrary string here
                             :port => 2501,
                             :timeout => 5 # seconds before we give up on the socket connection
       )
+      
+      render json: @server_info
+      
     rescue Exception
     else
     end
