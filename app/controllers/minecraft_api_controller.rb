@@ -5,7 +5,7 @@ class MinecraftApiController < ActionController::API
   end
 
   def show
-    #begin
+    begin
 
       @server_info = Glowstone::Server.new('gm.cph.nodescloud.com',
                             :name => 'Nodes', # you can put any arbitrary string here
@@ -14,16 +14,19 @@ class MinecraftApiController < ActionController::API
       )
 
       @server_info.players.each do |player|
-        @players = "#{@players}" + "#{player}\n"
+        @players = "#{@players}" + "#{player}, "
       end
 
+      @players = @players.chop.chop
+
       payload ={
-          'channel' => 'testest',
-          #'user_name' => "#{params[:user_name]}",
+	  'response_type': "in_channel",
+          'channel' => "#{params[:channel]}",
+          'user_name' => "#{params[:user_name]}",
           'attachments' => [
               'color' => 'good',
               'title' => "#{@server_info.name} - #{@server_info.motd}",
-              'text' => "*Address*: #{@server_info.host}:#{@server_info.port}\n *Version*: #{@server_info.version}\n *Players*: #{@server_info.num_players}/#{@server_info.max_players}\n *Online*: #{@players}",
+              'text' => "Address: #{@server_info.host}:#{@server_info.port}\n Version: #{@server_info.version}\n Players: #{@server_info.num_players}/#{@server_info.max_players}\n Online: #{@players}",
           ]
       }.to_json
 
@@ -35,13 +38,16 @@ class MinecraftApiController < ActionController::API
       req.body = payload
       res = https.request(req)
 
-      if @res.kind_of? Net::HTTPSuccess
+      if res.kind_of? Net::HTTPSuccess
+	render status: 200
       else
         return_error(res)
       end
+
       
-    #rescue Exception
-    #else
-    #end
+      
+    rescue Exception
+    else
+    end
   end
 end
