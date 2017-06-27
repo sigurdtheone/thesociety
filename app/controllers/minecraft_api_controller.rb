@@ -21,7 +21,7 @@ class MinecraftApiController < ActionController::API
 
       payload ={
 	  'response_type': "in_channel",
-          'channel' => "#{params[:channel]}",
+          'channel_id' => "#{params[:channel_id]}",
           'user_name' => "#{params[:user_name]}",
           'attachments' => [
               'color' => 'good',
@@ -41,12 +41,11 @@ class MinecraftApiController < ActionController::API
       if res.kind_of? Net::HTTPSuccess
 	render status: 200
       else
-        return_error(res)
+        render status: 450
       end
 
-      
-      
     rescue Exception
+      render status: 500
     else
     end
   end
