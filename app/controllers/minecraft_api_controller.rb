@@ -5,19 +5,22 @@ class MinecraftApiController < ActionController::API
   end
 
   def show
-    begin
+    #begin
 
       @server_info = Glowstone::Server.new('gm.cph.nodescloud.com',
                             :name => 'Nodes', # you can put any arbitrary string here
                             :port => 2500,
                             :timeout => 5 # seconds before we give up on the socket connection
       )
-
-      @server_info.players.each do |player|
-        @players = "#{@players}" + "#{player}, "
+     
+      begin 
+        @server_info.players.each do |player|
+          @players = "#{@players}" + "#{player}, "
+        end
+      @players = @players.chop
+      rescue NoMethodError
+	@players = "No players online :("
       end
-
-      @players = @players.chop.chop
 
       payload ={
 	  'response_type': "in_channel",
@@ -41,12 +44,12 @@ class MinecraftApiController < ActionController::API
       if res.kind_of? Net::HTTPSuccess
 	render status: 200
       else
-        render status: 450
+   #     render status: 450
       end
 
-    rescue Exception
-      render status: 500
-    else
-    end
+  #  rescue Exception
+ #     render status: 500
+#    else
+    #end
   end
 end
