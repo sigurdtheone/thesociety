@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/minecraft', to: 'minecraft#index'
   post '/minecraft', to: 'minecraft#index'
   
-  # Minecraft
-  get '/api_minecraft', to: 'minecraft#show'
-  post '/api_minecraft', to: 'minecraft#show'
+  # Minecraft Api
+  get '/minecraft_api', to: 'minecraft_api#show'
+  post '/minecraft_api', to: 'minecraft_api#show'
 end
