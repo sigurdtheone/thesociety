@@ -18,4 +18,9 @@ Rails.application.routes.draw do
   # Minecraft Api
   get '/minecraft_api', to: 'minecraft_api#show'
   post '/minecraft_api', to: 'minecraft_api#show'
+
+  # Github Api
+  get '/github_api', to: 'github_api#show'
+  post '/github_api', to: 'github_api#show'
+
 end
