@@ -1,9 +1,11 @@
 FROM ubuntu:16.04
 MAINTAINER sigurd.kristensen@gmail.com
-    
-RUN apt-get update && apt install -y apt-utils
 
-RUN apt-get install -y \ 
+ENV DEBIAN_FRONTEND noninteractive
+    
+RUN apt-get update && apt install -y --no-install-recommends apt-utils
+
+RUN apt-get install -y --no-install-recommends \ 
     ruby ruby-json rake tzdata nodejs \  
     libxml2-dev libxslt-dev libmysqlclient-dev
 
