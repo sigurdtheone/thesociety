@@ -3,7 +3,7 @@ MAINTAINER sigurd.kristensen@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
     
-RUN apt-get update && apt install -y --no-install-recommends apt-utils
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 
 RUN apt-get install -y --no-install-recommends \ 
     ruby ruby-json rake tzdata nodejs \  
