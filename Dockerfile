@@ -1,7 +1,9 @@
 FROM ubuntu:16.04
 MAINTAINER sigurd.kristensen@gmail.com
     
-RUN apt-get update && apt-get install -y \ 
+RUN apt-get update && apt install apt-utils
+
+RUN apt-get install -y \ 
     ruby ruby-json rake tzdata nodejs \  
     libxml2-dev libxslt-dev libmysqlclient-dev
 
@@ -9,7 +11,7 @@ ADD Gemfile /app/
 ADD Gemfile.lock /app/
 
 RUN apt-get install -y \
-    ruby-dev openssl-dev linux-headers-generic && \
+    ruby-dev openssl linux-headers-generic && \
     gem install \
     bundler \
     unicorn && \
