@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 
 RUN apt-get install -y --no-install-recommends \ 
-    ruby ruby-json rake tzdata nodejs \  
+    ruby ruby-kgio ruby-json rake tzdata nodejs \  
     libxml2-dev libxslt-dev libmysqlclient-dev
 
 ADD Gemfile /app/  
