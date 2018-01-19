@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 
 RUN apt-get install -y --no-install-recommends \ 
     ruby ruby-kgio ruby-json rake tzdata nodejs \  
-    libxml2-dev libxslt-dev libmysqlclient-dev
+    build-essential libxml2-dev libxslt-dev libmysqlclient-dev
 
 ADD Gemfile /app/  
 ADD Gemfile.lock /app/
