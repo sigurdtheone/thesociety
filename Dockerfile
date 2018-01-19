@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER sigurd.kristensen@gmail.com
     
-RUN apt-get update && apt install apt-utils
+RUN apt-get update && apt install -y apt-utils
 
 RUN apt-get install -y \ 
     ruby ruby-json rake tzdata nodejs \  
