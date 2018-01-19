@@ -1,5 +1,7 @@
 class GithubApiController < ActionController::API
 
+  require 'net/http'
+
   def return_error(res)
     puts  "Something went wrong, API returned error: #{res.code} - #{res.body}"
   end
@@ -28,15 +30,19 @@ class GithubApiController < ActionController::API
       uri = URI.parse("https://hooks.slack.com/services/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")
       https = Net::HTTP.new(uri.host,uri.port)
       https.use_ssl = true
-      https.verify_mode = OpenSSL::SSL::VERIFY_NONE
       req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
       req.body = payload
       res = https.request(req)
 
-      if res.kind_of? Net::HTTPSuccess
-	render status: 200, html: res
-      else
-	render status: 500, html: res
+      case res
+        when Net::HTTPSuccess
+          render status: 200
+        when Net::HTTPUnauthorized
+          {'error' => "#{res.message}: username and password set and correct?"}
+        when Net::HTTPServerError
+          {'error' => "#{res.message}: try again later?"}
+        else
+          {'error' => res.message}
       end
   end
 end
