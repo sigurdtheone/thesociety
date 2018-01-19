@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER sigurd.kristensen@gmail.com
     
 RUN apt-get update && apt-get install -y \ 
-    ruby ruby-json rake libstdc++ tzdata nodejs \  
+    ruby ruby-json rake tzdata nodejs \  
     libxml2-dev libxslt-dev libmysqlclient-dev
 
 ADD Gemfile /app/  
