@@ -1,14 +1,15 @@
-FROM alpine:3.2  
+FROM ubuntu:16.04
 MAINTAINER sigurd.kristensen@gmail.com
-
-RUN apk update && apk --update add ruby ruby-irb ruby-json ruby-rake \  
-    ruby-bigdecimal ruby-io-console libstdc++ tzdata nodejs libxml2-dev libxslt-dev
+    
+RUN apt-get update && apt-get install -y \ 
+    ruby ruby-json rake libstdc++ tzdata nodejs \  
+    libxml2-dev libxslt-dev libmysqlclient-dev
 
 ADD Gemfile /app/  
 ADD Gemfile.lock /app/
 
-RUN apk --update add --virtual build-dependencies build-base ruby-dev openssl-dev \  
-    libc-dev linux-headers && \
+RUN apt-get install -y \
+    ruby-dev openssl-dev linux-headers-generic && \
     gem install \
     bundler \
     unicorn && \
