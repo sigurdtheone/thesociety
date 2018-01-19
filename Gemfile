@@ -5,6 +5,7 @@ gem 'modernizr-rails'
 gem 'breadcrumbs_on_rails'
 gem 'rmagick'
 gem 'glowstone'
+gem 'unicorn'
 
 gem 'dotenv-rails', :groups => [:development, :test, :production]
 
