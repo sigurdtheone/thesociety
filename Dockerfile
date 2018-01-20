@@ -27,7 +27,7 @@ ADD . /app
 RUN mkdir -p /app/shared/pids /app/shared/sockets /app/shared/log
 
 # Compile assets
-RUN RAILS_ENV=production bundle exec rake assets:precompile
+RUN cd /app/ && RAILS_ENV=production bundle exec rake assets:precompile
 
 # Fix ownership of files
 RUN chown -R nobody:nogroup /app
