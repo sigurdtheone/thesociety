@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER sigurd.kristensen@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
-    
+
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 
 RUN apt-get install -y --no-install-recommends libmagickwand-dev \ 
@@ -20,10 +20,16 @@ RUN apt-get install -y \
     cd /app ; bundle install --without development test && \
     apt-get purge -y build-essential
 
+# Add code to image
 ADD . /app  
 
+# Add unicorn folders
 RUN mkdir -p /app/shared/pids /app/shared/sockets /app/shared/log
 
+# Compile assets
+RUN bundle exec rake assets:precompile
+
+# Fix ownership of files
 RUN chown -R nobody:nogroup /app
 
 # Link persistant folders
