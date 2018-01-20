@@ -26,8 +26,6 @@ RUN mkdir -p /app/shared/pids /app/shared/sockets /app/shared/log
 
 RUN chown -R nobody:nogroup /app
 
-RUN mkdir -p shared/pids shared/sockets shared/log
-
 # Link persistant folders
 RUN ln -s /data/files /app/public/files
 RUN ln -s /data/images /app/public/images
