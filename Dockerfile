@@ -21,6 +21,9 @@ RUN apt-get install -y \
     apt-get purge -y build-essential
 
 ADD . /app  
+
+RUN mkdir -p /app/shared/pids /app/shared/sockets /app/shared/log
+
 RUN chown -R nobody:nogroup /app
 
 RUN mkdir -p shared/pids shared/sockets shared/log
