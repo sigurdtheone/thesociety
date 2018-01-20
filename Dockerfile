@@ -18,7 +18,7 @@ RUN apt-get install -y \
     bundler \
     unicorn && \
     cd /app ; bundle install --without development test && \
-    apk del build-dependencies
+    apt-get purge build-essential
 
 ADD . /app  
 RUN chown -R nobody:nogroup /app
