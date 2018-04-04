@@ -39,7 +39,7 @@ RUN ln -s /data/webms /app/public/webms
 
 USER nobody
 
-RUN cd /app/ && ruby thumb_gen_videos.rb
+#RUN cd /app/ && ruby thumb_gen_videos.rb
 
 ENV RAILS_ENV production
 WORKDIR /app
