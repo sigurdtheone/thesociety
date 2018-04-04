@@ -35,7 +35,7 @@ RUN chown -R nobody:nogroup /app
 # Link persistant folders
 RUN ln -s /data/files /app/public/files
 RUN ln -s /data/images /app/public/images
-RUN ln -s /media/Navi/Movies/webms /app/public/webms
+RUN ln -s /data/webms /app/public/webms
 
 USER nobody
 

@@ -5,30 +5,30 @@ class WebmsController < ApplicationController
     add_breadcrumb "Webms", '/webms'
 
     if params[:folder_name].nil?
-      @images = get_webms('general')
+      @webms = get_webms('general')
       @folder = 'general'
     else
-      @images = get_webms(params[:folder_name])
+      @webms = get_webms(params[:folder_name])
       @folder = params[:folder_name]
     end
 
-    @image_folders = []
+    @webm_folders = []
     if File.directory?(Rails.root.join('public', 'webms'))
       Dir.entries(Rails.root.join('public', 'webms')).each do |folder|
         unless folder == '.' || folder == '..'
-          @image_folders << folder.downcase
+          @webm_folders << folder.downcase
         end
       end
     end
 
   end
 
-  def get_images(folder)
+  def get_webms(folder)
     if File.directory?(Rails.root.join('public', 'webms', folder, 'original'))
-      images = Dir.entries("public/images/#{folder}/original")
-      images.delete('.')
-      images.delete('..')
-      images
+      webms = Dir.entries("public/webms/#{folder}/original")
+      webms.delete('.')
+      webms.delete('..')
+      webms
     end
   end
 end
