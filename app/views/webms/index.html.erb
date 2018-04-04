@@ -18,7 +18,7 @@
     <div class="medium-4 columns">
       <div class="" data-equalizer-watch>
         <a href="<%= "webms/#{@folder}/original/#{webm}" %>">
-          <img class="thumbnail" src="<%= "webms/#{@folder}/thumbs/tmb_#{webm}" %>" height="100">
+          <img class="thumbnail" src="<%= "webms/#{@folder}/thumbs/#{webm.sub! '.webm', '.jpg'}" %>" height="100">
         </a>
       </div>
     </div>
