@@ -7,8 +7,8 @@ puts @webms
 
 @webms.each do |webm|
   next if webm  == '.' or webm == '..'
-  webm_path = "./public/webms/general/original/#{image}"
-  webm_destination = "./public/webms/general/thumbs/#{image}"
+  webm_path = "./public/webms/general/original/#{webm}"
+  webm_destination = "./public/webms/general/thumbs/#{webm}"
 
   `ffmpeg -i #{webm_path} 00:00:02.000 -vframes 1 #{webm_destination.sub! '.webm', '.jpg'}`
 end
