@@ -4,7 +4,7 @@ Dir.entries("/app/public/webms/").each do |folder|
      @originals = "/app/public/webms/#{folder}/original/"
      @thumbs = "/app/public/webms/#{folder}/thumbs/"
 
-    Dir.entries(originals).each do |webm|
+    Dir.entries(@originals).each do |webm|
       if webm.include? ".webm"
         webm_path = "#{@originals}#{webm}"
         webm_destination = "#{@thumbs}#{webm}"
