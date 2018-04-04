@@ -3,9 +3,8 @@ MAINTAINER sigurd.kristensen@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
-
-RUN apt-get install -y --no-install-recommends libmagickwand-dev \
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils \
+    && apt-get install -y --no-install-recommends libmagickwand-dev \
     ruby ruby-kgio ruby-json rake tzdata nodejs imagemagick \
     build-essential libxml2-dev libxslt-dev libmysqlclient-dev \
     ffmpeg
@@ -13,7 +12,7 @@ RUN apt-get install -y --no-install-recommends libmagickwand-dev \
 ADD Gemfile /app/
 ADD Gemfile.lock /app/
 
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
     ruby-dev openssl linux-headers-generic && \
     gem install \
     bundler \
