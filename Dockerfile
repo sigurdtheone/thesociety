@@ -39,6 +39,8 @@ RUN ln -s /data/webms /app/public/webms
 
 USER nobody
 
+
+
 ENV RAILS_ENV production
 WORKDIR /app
 
