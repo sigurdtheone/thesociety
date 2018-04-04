@@ -30,5 +30,7 @@
 !public/images/site/original
 !public/images/site/thumbs
 
+# Shared Unicorn folders:
+/shared/*
 
 .idea/

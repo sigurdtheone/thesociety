@@ -5,11 +5,12 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 
-RUN apt-get install -y --no-install-recommends libmagickwand-dev \ 
-    ruby ruby-kgio ruby-json rake tzdata nodejs imagemagick \  
-    build-essential libxml2-dev libxslt-dev libmysqlclient-dev
+RUN apt-get install -y --no-install-recommends libmagickwand-dev \
+    ruby ruby-kgio ruby-json rake tzdata nodejs imagemagick \
+    build-essential libxml2-dev libxslt-dev libmysqlclient-dev \
+    ffmpeg
 
-ADD Gemfile /app/  
+ADD Gemfile /app/
 ADD Gemfile.lock /app/
 
 RUN apt-get install -y \
@@ -21,7 +22,7 @@ RUN apt-get install -y \
     apt-get purge -y build-essential
 
 # Add code to image
-ADD . /app  
+ADD . /app
 
 # Add unicorn folders
 RUN mkdir -p /app/shared/pids /app/shared/sockets /app/shared/log
@@ -35,6 +36,7 @@ RUN chown -R nobody:nogroup /app
 # Link persistant folders
 RUN ln -s /data/files /app/public/files
 RUN ln -s /data/images /app/public/images
+RUN ln -s /media/Navi/Movies/webms /app/public/webms
 
 USER nobody
 
